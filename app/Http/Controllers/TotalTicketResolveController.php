@@ -16,3 +16,4 @@ class TotalTicketResolveController extends Controller
         return view('totalticketresolve', compact('users'));
     }
 }
+

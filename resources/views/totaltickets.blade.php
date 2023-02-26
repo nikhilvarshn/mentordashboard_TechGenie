@@ -25,6 +25,17 @@
 </div>
 
 <script>
+    let fun=(c)=>{
+        if(c==='1'){
+                return '<span style="color:green">Raised</span>';
+            }
+            if(c==='2'){
+                return '<span style="color:yellow">Inprocessing</span>';
+            }
+            if(c==='3'){
+                return '<span style="color:red">Closed</span>';
+            }
+    }
 $(document).ready(function(){
     let v=$('#myTable').DataTable({
         data:<?php echo $users?>,
@@ -54,6 +65,23 @@ $(document).ready(function(){
         let i = 1;
         v.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
             this.data(i++);
+        });
+        // v.cells(null, 10, { search: 'applied', order: 'applied' }).every(function (cell) {
+        //     let c=this.data();
+        //     this.data(fun(c));
+        //     console.log(c);
+        // });
+        v.cells(null, 10, { search: 'applied', order: 'applied' }).every(function (cell) {
+            let c=this.data();
+            if(c==='1'){
+                this.data('<span style="color:green">Raised</span>');
+            }
+            if(c==='2'){
+                this.data('<span style="color:yellow">Inprocessing</span>');
+            }
+            if(c==='3'){
+                this.data('<span style="color:red">Closed</span>');
+            }
         });
     }).draw();
 });

@@ -50,7 +50,7 @@
                 <div class="col-xl-6">
                     <img class="bg-img-cover bg-center" src="../img/login2.png" alt="looginpage">
                 </div>
-                <div class="col-xl-6 p-0">    
+                <div class="col-xl-6 p-0">   
                     <div class="login-card">
                         <form class="theme-form login-form">
                             <h4>Login</h4>

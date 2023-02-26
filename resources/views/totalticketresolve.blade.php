@@ -43,6 +43,18 @@ $(document).ready(function(){
         v.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
             this.data(i++);
         });
+        v.cells(null, 10, { search: 'applied', order: 'applied' }).every(function (cell) {
+            let c=this.data();
+            if(c==='1'){
+                this.data('<span style="color:green">Raised</span>');
+            }
+            if(c==='2'){
+                this.data('<span style="color:yellow">Inprocessing</span>');
+            }
+            if(c==='3'){
+                this.data('<span style="color:red">Closed</span>');
+            }
+        });
     }).draw();
 });
 </script>
