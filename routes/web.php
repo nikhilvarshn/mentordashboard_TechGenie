@@ -29,6 +29,7 @@ use App\Http\Controllers\TotalTicketResolveController;
 */
 
 Route::get('/', [LoginController::class, 'index'])->name('home');
+Route::post('/', [LoginController::class, 'store'])->name('home');
 
 
 Route::controller(RegisteredController::class)->group(function (){
@@ -70,9 +71,9 @@ Route::controller(InprogressTicketController::class)->group(function () {
     Route::get('/inprogresstickets', 'index');
 });
 
-Route::controller(LoginController::class)->group(function (){
-    Route::get('/login', 'index');
-});
+// Route::controller(LoginController::class)->group(function (){
+//     Route::get('/login', 'index');
+// });
 
 Route::controller(TotalTicketResolveController::class)->group(function (){
     Route::get('/totalticketresolve', 'index');
